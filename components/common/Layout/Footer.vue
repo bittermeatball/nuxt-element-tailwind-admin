@@ -1,12 +1,9 @@
 <template>
-  <div
-    class="p-0 text-center bg-gray-900 text-white w-full"
-    style="position: fixed; bottom: 0;"
-  >
-    <p class="my-1">
+  <el-footer class="default-footer text-white">
+    <p style="line-height: 60px;">
       {{ $t('home.footer') }}
     </p>
-  </div>
+  </el-footer>
 </template>
 
 <script>
@@ -14,3 +11,8 @@ export default {
   name: 'Footer',
 }
 </script>
+<style lang="scss" scoped>
+.default-footer {
+  background-color: $gray-800;
+}
+</style>

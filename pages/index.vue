@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <el-main>
     <ExampleComponent />
     <p class="random-class">
       {{ $t('random-text') | slugify }}
@@ -12,7 +12,7 @@
     <p class="random-text-using-mixin">
       {{ $t('random-text-using-mixin') }}
     </p>
-  </div>
+  </el-main>
 </template>
 <script>
 import { ExampleComponent } from '~/components/uncommon/Home'
