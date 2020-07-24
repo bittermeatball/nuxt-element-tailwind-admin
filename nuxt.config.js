@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
   /*
    ** Nuxt rendering mode
@@ -40,9 +41,9 @@ export default {
   /*
    ** Import scss resource in every component so we can use the scss varibles
    */
-  styleResources: {
-    scss: ['~/assets/scss/base/all.scss'],
-  },
+  // styleResources: {
+  //   scss: ['~/assets/scss/base/all.scss'],
+  // },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

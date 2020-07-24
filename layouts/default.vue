@@ -1,7 +1,17 @@
 <template>
   <el-container class="default-layout-container h-full-vh">
-    <el-aside class="default-layout-aside" width="250px">
-      <Sidebar />
+    <el-aside
+      class="default-layout-aside bg-gray-900"
+      :width="sidebarCollapsed ? '65px' : '250px'"
+    >
+      <Sidebar>
+        <template v-slot:header>
+          <i class="el-icon-s-grid text-white"></i>
+          <span class="font-bold text-white">
+            A very cool dashboard
+          </span>
+        </template>
+      </Sidebar>
     </el-aside>
     <el-container class="flex-col">
       <!-- el-header -->
@@ -17,7 +27,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 import { Login, Navbar, Sidebar, Footer } from '~/components/common'
 export default {
   components: {
@@ -30,6 +40,11 @@ export default {
     return {
       dialogVisible: false,
     }
+  },
+  computed: {
+    ...mapState({
+      sidebarCollapsed: (state) => state.options.sidebarCollapsed,
+    }),
   },
   created() {
     // We store this configuration in localStorage because it lasts forever
@@ -45,6 +60,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .default-layout-aside {
-  background-color: $gray-900;
+  transition-duration: 0.3s;
 }
 </style>
