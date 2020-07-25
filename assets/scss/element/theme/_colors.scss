@@ -1,23 +1,4 @@
 /* Element UI color
 -------------------------- */
-$--color-white: #ffffff;
-$--color-black: #000000;
-$--color-blue: #409EFF;
-$--color-indigo: #6610f2;
-$--color-purple: #6f42c1;
-$--color-pink: #e83e8c;
-$--color-red: #F56C6C;
-$--color-orange: #E6A23C;
-$--color-yellow: #ffc107;
-$--color-green: #67C23A;
-$--color-teal: #20c997;
-$--color-cyan: #69c7e4;
-$--color-light: #f8f9fa;
-$--color-dark: #343a40;
-
-$--color-primary: #409EFF; // blue
-$--color-secondary: #909399; // secondary
-$--color-success: #67C23A; // success
-$--color-danger: #F56C6C; // danger
-$--color-warning: #E6A23C; // warning
-$--color-info: #909399; // info
+// For color configuration, go to ~/assets/scss/base/utitlities/_variants.scss
+@import '../../base/utilities/variants'
