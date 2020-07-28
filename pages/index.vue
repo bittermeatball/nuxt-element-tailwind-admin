@@ -1,21 +1,29 @@
 <template>
   <el-main>
     <StatusRow :data="statusData" />
-    <el-row class="mt-5 ml-4">
-      <el-col :span="12">
+    <el-row class="mt-7 mx-0" :gutter="30">
+      <el-col :span="12" class="grid-content">
         <DataTable
           title="Best employees of the month"
           :headers="bestEmployeeData.headers"
           :data="bestEmployeeData.data"
         />
       </el-col>
-      <el-col :span="12"></el-col>
+      <el-col :span="12" class="grid-content">
+        <el-card shadow="always">
+          <div slot="header" class="clearfix">
+            <span class="font-bold">Biểu đồ mẫu</span>
+          </div>
+          <LineChart :data="chartdata" :options="chartOptions" />
+        </el-card>
+      </el-col>
     </el-row>
   </el-main>
 </template>
 <script>
 import { StatusRow } from '~/components/uncommon/Home'
-import { DataTable } from '~/components/common'
+import { DataTable, LineChart } from '~/components/common'
+
 //
 // Fake data for example
 const statusData = require('~/constants/base/status-row.json')
@@ -25,11 +33,26 @@ export default {
   components: {
     StatusRow,
     DataTable,
+    LineChart,
   },
   data() {
     return {
       statusData,
       bestEmployeeData,
+      chartdata: {
+        labels: ['January', 'February'],
+        datasets: [
+          {
+            label: 'Data One',
+            backgroundColor: '#f87979',
+            data: [40, 20],
+          },
+        ],
+      },
+      chartOptions: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
     }
   },
   created() {
