@@ -6,11 +6,10 @@
     :text-color="textColor"
     :active-text-color="activeTextColor"
     :collapse="isCollapsed"
-    :router="true"
     @open="handleOpen"
     @close="handleClose"
   >
-    <el-menu-item index="1" :route="{ name: '/' }">
+    <el-menu-item index="1" @click="$router.push('/')">
       <slot name="header">
         Hello
       </slot>

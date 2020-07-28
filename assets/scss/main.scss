@@ -2,7 +2,13 @@
 @import '~/assets/scss/element/all.scss';
 @import '~/assets/scss/tailwindcss/all.scss';
 // Your global custom style
-
+@font-face {
+    font-family: 'AmpleSoft';
+    src: url('../fonts/AmpleSoft.ttf');
+}
+.font-ample {
+    font-family: 'AmpleSoft'
+}
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {  }
 

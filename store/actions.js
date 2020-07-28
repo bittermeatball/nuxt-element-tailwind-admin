@@ -1,3 +1,4 @@
+// const queryString = require('query-string')
 export default {
   // Called manually in middleware in SPA mode
   async nuxtServerInit({ commit }) {

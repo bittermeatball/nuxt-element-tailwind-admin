@@ -1,5 +1,5 @@
 <template>
-  <el-menu-item :index="count" :route="{ name: item.to }">
+  <el-menu-item :index="count" @click="$router.push(item.to)">
     <i :class="item.icon"></i>
     <span>{{ $t(item.title) }}</span>
   </el-menu-item>

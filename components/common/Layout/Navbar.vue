@@ -34,7 +34,7 @@
           v-if="!$store.state.auth && $route.path != '/login'"
           index="3-2"
           :title="$t('navbar.login')"
-          @click="$root.$emit('showLoginDialog')"
+          @click="$root.$emit('el:show:dialog', 'singin-dialog')"
         >
           {{ $t('navbar.login') }}
         </el-menu-item>

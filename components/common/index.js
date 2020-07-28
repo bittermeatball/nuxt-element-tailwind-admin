@@ -6,5 +6,8 @@ export { default as Navbar } from './Layout/Navbar.vue'
 export { default as Sidebar } from './Layout/Sidebar/Main.vue'
 export { default as Footer } from './Layout/Footer.vue'
 // Templates
+// Dialog
+export { default as Dialog } from './Templates/Dialog/DialogWrapper.vue'
+// Form
 export { default as FormWrapper } from './Templates/Form/FormWrapper.vue'
 export { default as InputWrapper } from './Templates/Form/InputWrapper.vue'

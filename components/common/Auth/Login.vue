@@ -1,8 +1,5 @@
 <template>
-  <el-dialog
-    :visible.sync="dialogVisible"
-    title="Sign in to access the secret page"
-  >
+  <Dialog id="singin-dialog" title="Đăng nhập">
     <FormWrapper @onSubmit="postLogin">
       <InputWrapper rules="required|email">
         <!--  -->
@@ -23,11 +20,13 @@
         {{ $t('login.button') }}
       </el-button>
     </FormWrapper>
-  </el-dialog>
+  </Dialog>
 </template>
 <script>
+import { Dialog } from '~/components/common'
 export default {
   components: {
+    Dialog,
     FormWrapper: () =>
       import('~/components/common/Templates/Form/FormWrapper.vue'),
     InputWrapper: () =>
@@ -39,22 +38,12 @@ export default {
         email: '',
         password: '',
       },
-      dialogVisible: false,
     }
-  },
-  created() {
-    this.$root.$on('showLoginDialog', () => {
-      this.dialogVisible = true
-    })
-    this.$root.$on('hideLoginDialog', () => {
-      this.dialogVisible = false
-    })
   },
   // Back to home if you've already been authenticated
   methods: {
     async postLogin() {
       await this.$store.dispatch('login', this.form)
-      this.dialogVisible = false
     },
   },
 }
