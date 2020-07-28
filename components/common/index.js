@@ -13,3 +13,5 @@ export { default as Dialog } from './Templates/Dialog/Dialog.vue'
 // Form
 export { default as FormWrapper } from './Templates/Form/FormWrapper.vue'
 export { default as InputWrapper } from './Templates/Form/InputWrapper.vue'
+// Table
+export { default as DataTable } from './Templates/Table/DataTable.vue'

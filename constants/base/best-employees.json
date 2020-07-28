@@ -1,0 +1,44 @@
+{
+    "headers": [
+        {
+            "key": "name",
+            "label": "Name",
+            "width": 180
+        },
+        {
+            "key": "phone",
+            "label": "Phone"
+        },
+        {
+            "key": "email",
+            "label": "Email"
+        }
+    ],
+    "data": [
+        {
+            "name": "Nguyễn Văn A",
+            "phone": "0987654321",
+            "email": "nguyenvana@gmail.com"
+        },
+        {
+            "name": "Nguyễn Văn B",
+            "phone": "0987654321",
+            "email": "nguyenvanb@gmail.com"
+        },
+        {
+            "name": "Nguyễn Văn C",
+            "phone": "0987654321",
+            "email": "nguyenvanc@gmail.com"
+        },
+        {
+            "name": "Nguyễn Văn D",
+            "phone": "0987654321",
+            "email": "nguyenvand@gmail.com"
+        },
+        {
+            "name": "Nguyễn Văn E",
+            "phone": "0987654321",
+            "email": "nguyenvane@gmail.com"
+        }
+    ]
+}

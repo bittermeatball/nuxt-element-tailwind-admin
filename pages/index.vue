@@ -1,19 +1,35 @@
 <template>
   <el-main>
     <StatusRow :data="statusData" />
+    <el-row class="mt-5 ml-4">
+      <el-col :span="12">
+        <DataTable
+          title="Best employees of the month"
+          :headers="bestEmployeeData.headers"
+          :data="bestEmployeeData.data"
+        />
+      </el-col>
+      <el-col :span="12"></el-col>
+    </el-row>
   </el-main>
 </template>
 <script>
 import { StatusRow } from '~/components/uncommon/Home'
+import { DataTable } from '~/components/common'
+//
+// Fake data for example
 const statusData = require('~/constants/base/status-row.json')
+const bestEmployeeData = require('~/constants/base/best-employees.json')
 export default {
   name: 'Home',
   components: {
     StatusRow,
+    DataTable,
   },
   data() {
     return {
       statusData,
+      bestEmployeeData,
     }
   },
   created() {
