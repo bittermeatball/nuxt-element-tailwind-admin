@@ -7,6 +7,10 @@
 // Do not modify this
 // For color configuration, go to ~/assets/scss/base/utitlities/_variants.scss
 :root {
+
+    --color-theme-1: #{$--color-theme-1};
+    --color-theme-2: #{$--color-theme-2};
+
     --color-white: #{$--color-white};
     --color-black: #{$--color-black};
     --color-blue: #{$--color-blue};
@@ -99,4 +103,5 @@
     --color-info-700: #{$--color-info-700};
     --color-info-800: #{$--color-info-800};
     --color-info-900: #{$--color-info-900};
+    
 }

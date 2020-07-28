@@ -2,6 +2,8 @@
 // Please do not modify this file
 // Color customizations are made by CSS variables in '~/assets/scss/base/utilities/_variants.scss'
 module.exports = {
+  'theme-1': 'var(--color-theme-1)',
+  'theme-2': 'var(--color-theme-2)',
   white: 'var(--color-white)',
   black: 'var(--color-black)',
   blue: 'var(--color-blue)',

@@ -9,11 +9,13 @@
     @open="handleOpen"
     @close="handleClose"
   >
+    <div class="sy-2"></div>
     <el-menu-item index="1" @click="$router.push('/')">
       <slot name="header">
         Hello
       </slot>
     </el-menu-item>
+    <div class="sy-2"></div>
     <component
       :is="child.children.length > 0 ? SubMenu : Item"
       v-for="(child, index) in sidebar"
@@ -26,21 +28,21 @@
 
 <script>
 import { mapState } from 'vuex'
-const sidebarTree = require('~/constants/base/sidebar.json')
+const sidebarTree = require('~/constants/base/config/sidebar.json')
 export default {
   name: 'Sidebar',
   props: {
     backgroudColor: {
       type: String,
-      default: '#212529',
+      default: '#FFFFFF',
     },
     textColor: {
       type: String,
-      default: '#fff',
+      default: 'var(--color-dark)',
     },
     activeTextColor: {
       type: String,
-      default: '#ffd04b',
+      default: 'var(--color-primary)',
     },
   },
   data() {
@@ -69,3 +71,6 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+@import '~assets/scss/base/layout/grid';
+</style>

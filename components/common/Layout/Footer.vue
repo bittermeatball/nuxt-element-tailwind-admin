@@ -1,12 +1,14 @@
 <template>
   <el-footer
     :style="customStyle"
-    class="default-footer bg-gray-800 text-white"
-    height="40px"
+    class="default-footer text-white"
+    height="30px"
   >
-    <p style="line-height: 40px;">
-      {{ $t('footer') }}
-    </p>
+    <small>
+      <p style="line-height: 30px;">
+        {{ $t('footer') }}
+      </p>
+    </small>
   </el-footer>
 </template>
 

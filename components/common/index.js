@@ -9,7 +9,7 @@ export { default as Footer } from './Layout/Footer.vue'
 // Card
 export { default as StatusCard } from './Templates/Card/StatusCard.vue'
 // Chart
-export { default as LineChart } from './Templates/Chart/LineChart.vue'
+export { default as LineChart } from './Templates/Chart/LineChart/Main.vue'
 // Dialog
 export { default as Dialog } from './Templates/Dialog/Dialog.vue'
 // Form

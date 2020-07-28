@@ -1,5 +1,5 @@
 <template>
-  <el-card shadow="always">
+  <el-card shadow="always" class="border-0 rounded-lg">
     <div slot="header" class="clearfix">
       <span class="font-bold">{{ title }}</span>
     </div>

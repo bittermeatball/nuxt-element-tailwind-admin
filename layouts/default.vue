@@ -1,17 +1,17 @@
 <template>
   <el-container class="default-layout-container h-full-vh">
     <el-aside
-      class="default-layout-aside bg-gray-900"
+      class="default-layout-aside"
       :width="sidebarCollapsed ? '65px' : '250px'"
     >
-      <Sidebar active-text-color="var(--color-primary)">
+      <Sidebar active-text-color="var(--color-success)">
         <template v-slot:header>
           <img
             src="~/assets/img/logo-md.png"
-            style="width: 30px;"
+            style="width: 40px;"
             class="m-0 inline"
           />
-          <span class="text-white text-xl ml-5 tracking-wider font-ample">
+          <span class="text-dark text-xl ml-3 tracking-wider font-ample">
             Nestsera Tech
           </span>
         </template>
@@ -21,7 +21,7 @@
       <!-- el-header -->
       <Navbar />
       <!-- el-main -->
-      <nuxt class="relative" />
+      <nuxt class="relative default-page-container" />
       <!-- el-dialog -->
       <Login />
       <!-- el-footer -->
@@ -58,3 +58,11 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.default-page-container {
+  background-image: url(~assets/img/header-bg.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+</style>

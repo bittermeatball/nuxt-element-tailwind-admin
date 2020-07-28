@@ -38,6 +38,13 @@
     "header": "This is a header",
     "sidebar": "This is a sidebar"
   },
+  "components": {
+    "card": {
+      "status": {
+        "since-last-month": "Since last month"
+      }
+    }
+  },
   "secret-text": "This page requires authentication",
   "random-text": "This text use global scss variable in the component",
   "random-text-2": "Introduction page content",

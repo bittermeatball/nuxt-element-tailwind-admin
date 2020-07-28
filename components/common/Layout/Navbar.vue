@@ -1,5 +1,5 @@
 <template>
-  <el-header class="p-0">
+  <el-header class="p-0 shadow">
     <!--  -->
     <el-menu
       class="el-menu-demo"
@@ -56,7 +56,7 @@ export default {
   props: {
     backgroundColor: {
       type: String,
-      default: '#343A40',
+      default: 'var(--color-theme-1)',
     },
     textColor: {
       type: String,

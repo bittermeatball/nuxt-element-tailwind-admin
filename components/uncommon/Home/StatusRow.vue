@@ -5,7 +5,8 @@
         :title="item.title"
         :icon="item.icon"
         :data="item.data"
-        :class="[item.background, item.textColor, 'grid-content', 'mx-auto']"
+        :rate="item.rate"
+        :class="['grid-content', 'mx-auto']"
       />
     </el-col>
   </el-row>
@@ -27,6 +28,7 @@ export default {
             title: 'Status card 1',
             icon: 'el-icon-star-on',
             data: 100,
+            rate: 3.14,
           },
           {
             background: 'bg-gray-800',
@@ -34,6 +36,7 @@ export default {
             title: 'Status card 2',
             icon: 'el-icon-star-on',
             data: 200,
+            rate: -3,
           },
         ]
       },

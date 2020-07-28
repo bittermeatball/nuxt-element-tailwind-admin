@@ -38,6 +38,13 @@
     "header": "Đây là một header",
     "sidebar": "Đây là một sidebar"
   },
+  "components": {
+    "card": {
+      "status": {
+        "since-last-month": "Từ tháng trước"
+      }
+    }
+  },
   "secret-text": "Trang này yêu cầu đăng nhập mới thấy được",
   "random-text": "Đoạn text này dùng biến scss toàn cục trong component riêng",
   "random-text-2": "Nội dung trang giới thiệu",
