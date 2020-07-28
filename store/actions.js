@@ -13,6 +13,8 @@ export default {
     const auth = {
       currentUser: {
         name: 'Someone',
+        avatar:
+          'https://assets.codepen.io/t-1003/internal/avatars/teams/default.png?format=auto&height=256&version=1513627136&width=256',
       },
       accessToken: 'yourAccessTokenFromBackend',
     }

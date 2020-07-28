@@ -50,7 +50,6 @@ import { FormWrapper, InputWrapper } from '~/components/common'
 export default {
   layout: 'unauth',
   // Back to home if you've already been authenticated
-  middleware: 'authNotRequired',
   components: {
     FormWrapper,
     InputWrapper,

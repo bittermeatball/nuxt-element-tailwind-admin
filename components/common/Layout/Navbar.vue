@@ -22,21 +22,8 @@
           <el-avatar size="small" :src="avatar" class="bg-none"></el-avatar>
           <span class="ml-3">{{ username }}</span>
         </template>
-        <el-menu-item
-          v-if="$store.state.auth && $route.path != '/login'"
-          index="3-1"
-          :title="$t('navbar.logout')"
-          @click="$store.dispatch('logout')"
-        >
+        <el-menu-item index="3-1" :title="$t('navbar.logout')" @click="logout">
           {{ $t('navbar.logout') }}
-        </el-menu-item>
-        <el-menu-item
-          v-if="!$store.state.auth && $route.path != '/login'"
-          index="3-2"
-          :title="$t('navbar.login')"
-          @click="$root.$emit('el:show:dialog', 'singin-dialog')"
-        >
-          {{ $t('navbar.login') }}
         </el-menu-item>
       </el-submenu>
       <!-- i18n button -->
@@ -117,6 +104,10 @@ export default {
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath)
+    },
+    logout() {
+      this.$store.dispatch('logout')
+      this.$router.push('/login')
     },
   },
 }

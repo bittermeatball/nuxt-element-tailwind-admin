@@ -39,6 +39,7 @@
 import { mapMutations } from 'vuex'
 import { Footer } from '~/components/common'
 export default {
+  middleware: 'authNotRequired',
   components: {
     Footer,
   },
