@@ -4,9 +4,6 @@
       <div>
         <img class="block mx-auto" src="~assets/img/logo.png" alt="" />
       </div>
-      <!-- <h1 class="text-2xl my-3 text-center text-light">
-        {{ $t('login.title') }}
-      </h1> -->
       <div class="sy-5"></div>
       <div>
         <FormWrapper @onSubmit="postLogin">

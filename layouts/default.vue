@@ -58,8 +58,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.default-layout-aside {
-  transition-duration: 0.3s;
-}
-</style>

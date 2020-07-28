@@ -7,7 +7,7 @@ export { default as Sidebar } from './Layout/Sidebar/Main.vue'
 export { default as Footer } from './Layout/Footer.vue'
 // Templates
 // Dialog
-export { default as Dialog } from './Templates/Dialog/DialogWrapper.vue'
+export { default as Dialog } from './Templates/Dialog/Dialog.vue'
 // Form
 export { default as FormWrapper } from './Templates/Form/FormWrapper.vue'
 export { default as InputWrapper } from './Templates/Form/InputWrapper.vue'
