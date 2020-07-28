@@ -1,0 +1,30 @@
+[
+    {
+        "background": "bg-gray-800",
+        "textColor": "text-light",
+        "title": "Status card 1",
+        "icon": "el-icon-star-on",
+        "data": 100
+    },
+    {
+        "background": "bg-primary-700",
+        "textColor": "text-light",
+        "title": "Status card 1",
+        "icon": "el-icon-star-on",
+        "data": 100
+    },
+    {
+        "background": "bg-primary-800",
+        "textColor": "text-light",
+        "title": "Status card 2",
+        "icon": "el-icon-star-on",
+        "data": 100
+    },
+    {
+        "background": "bg-primary-900",
+        "textColor": "text-light",
+        "title": "Status card 3",
+        "icon": "el-icon-star-on",
+        "data": 100
+    }
+]

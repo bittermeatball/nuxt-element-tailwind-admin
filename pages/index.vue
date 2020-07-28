@@ -1,30 +1,39 @@
 <template>
   <el-main>
-    <ExampleComponent />
-    <p class="random-class text-primary">
-      {{ $t('random-text') | slugify }}
-    </p>
-    <p class="mt-5 text-gray">
-      {{ $t('random-text-using-grid') }}
-      <span class="sx-10"></span>
-      {{ $t('random-text-using-spacing') }}
-    </p>
-    <p class="random-text-using-mixin">
-      {{ $t('random-text-using-mixin') }}
-    </p>
+    <StatusRow :data="statusData" />
   </el-main>
 </template>
 <script>
-import { ExampleComponent } from '~/components/uncommon/Home'
+import { StatusRow } from '~/components/uncommon/Home'
+const statusData = require('~/constants/base/status-row.json')
 export default {
   name: 'Home',
   components: {
-    ExampleComponent,
+    StatusRow,
+  },
+  data() {
+    return {
+      statusData,
+    }
   },
   created() {
-    // Global function and variable from mixins
-    // this.sayHello("Rim")
-    // console.log(this.mixinMessage)
+    this.fetchStatusRow()
+  },
+  methods: {
+    fetchStatusRow() {
+      const newData = {
+        background: 'bg-cyan',
+        textColor: 'text-danger',
+        title: 'New custom card',
+        icon: 'el-icon-star-off',
+        data: 300,
+      }
+      // Merge with old data
+      this.statusData[0] = {
+        ...this.statusData[0],
+        ...newData,
+      }
+    },
   },
   head() {
     return {
