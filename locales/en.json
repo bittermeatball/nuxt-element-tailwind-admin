@@ -25,9 +25,9 @@
   },
   "footer": "Copyright 2020 by Nestsera Technology",
   "login": {
-    "title": "Log in to see secret page",
-    "email": "Your email...",
-    "password": "Your password...",
+    "title": "Sign in",
+    "email": "Your email",
+    "password": "Your password",
     "button": "Log in"
   },
   "home": {

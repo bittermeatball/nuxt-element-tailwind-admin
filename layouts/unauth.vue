@@ -1,14 +1,36 @@
 <template>
   <el-container class="default-layout-container h-full-vh">
-    <el-container class="flex-col">
-      <!-- el-header -->
-      <Navbar />
+    <el-aside class="default-layout-aside bg-primary-900" width="320px">
       <!-- el-main -->
       <nuxt class="relative" />
-      <!-- el-dialog -->
-      <Login />
+    </el-aside>
+    <el-container class="flex-col unauth-bg relative">
+      <div class="unauth-text-container">
+        <h3
+          class="text-light text-3xl unauth-text-subtitle animate__animated animate__lightSpeedInLeft animate__delay-2s"
+        >
+          IT software and design
+        </h3>
+        <h1 class="text-light text-6xl font-semibold unauth-text-title">
+          <span class="animate__animated animate__flipInX">
+            DREAM IT.
+          </span>
+          <span class="animate__animated animate__flipInX animate__delay-1s">
+            DELIVER IT
+          </span>
+        </h1>
+        <h3
+          class="text-light text-3xl font-hairline unauth-text-description animate__animated animate__fadeIn animate__delay-3s"
+        >
+          Striving to create outstanding technology solution
+        </h3>
+      </div>
       <!-- el-footer -->
-      <Footer />
+      <Footer
+        :custom-style="{
+          backgroundColor: 'var(--color-primary-800) !important',
+        }"
+      />
     </el-container>
   </el-container>
 </template>
@@ -17,7 +39,6 @@
 import { mapMutations } from 'vuex'
 import { Footer } from '~/components/common'
 export default {
-  layout: 'unauth',
   components: {
     Footer,
   },
@@ -34,7 +55,24 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.default-layout-aside {
-  transition-duration: 0.3s;
+@import '~assets/scss/base/utilities/mixins';
+@include maxWidth(767.98px) {
+  .default-layout-container {
+    height: 200vh;
+    flex-direction: column-reverse;
+  }
+  .default-layout-aside {
+    width: 100% !important;
+    height: 100vh;
+  }
+}
+.unauth-bg {
+  background-image: url(~assets/img/login/bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.unauth-text-container {
+  @include centerAbsolute('vertical');
+  left: 50px;
 }
 </style>
