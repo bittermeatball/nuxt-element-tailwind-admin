@@ -1,6 +1,5 @@
 <template>
   <el-menu
-    default-active="2"
     class="sidebar-menu border-none"
     :background-color="backgroudColor"
     :text-color="textColor"
@@ -10,7 +9,7 @@
     @close="handleClose"
   >
     <div class="sy-2"></div>
-    <el-menu-item index="1" class="header" @click="$router.push('/')">
+    <el-menu-item class="header" @click="$router.push('/')">
       <slot name="header">
         Hello
       </slot>
@@ -21,7 +20,7 @@
       v-for="(child, index) in sidebar"
       :key="child.title"
       :item="child"
-      :count="index + 2 + ''"
+      :count="index + 1 + ''"
     ></component>
   </el-menu>
 </template>

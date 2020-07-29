@@ -15,14 +15,14 @@
                         {
                             "title": "sidebar.user.list",
                             "icon": "el-icon-info",
-                            "icon-color": "var(--color-secondary)",
+                            "icon-color": "var(--color-primary)",
                             "to": "/users",
                             "children": []
                         },
                         {
                             "title": "sidebar.user.create",
                             "icon": "el-icon-circle-plus",
-                            "icon-color": "var(--color-secondary)",
+                            "icon-color": "var(--color-success)",
                             "to": "/users/create",
                             "children": []
                         }
