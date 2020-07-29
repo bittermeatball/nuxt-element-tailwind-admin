@@ -1,7 +1,7 @@
 <template>
   <el-menu
     default-active="2"
-    class="el-menu-vertical-demo border-none"
+    class="sidebar-menu border-none"
     :background-color="backgroudColor"
     :text-color="textColor"
     :active-text-color="activeTextColor"
@@ -10,7 +10,7 @@
     @close="handleClose"
   >
     <div class="sy-2"></div>
-    <el-menu-item index="1" @click="$router.push('/')">
+    <el-menu-item index="1" class="header" @click="$router.push('/')">
       <slot name="header">
         Hello
       </slot>
@@ -34,15 +34,15 @@ export default {
   props: {
     backgroudColor: {
       type: String,
-      default: '#FFFFFF',
+      default: 'var(--color-sidebar-background)',
     },
     textColor: {
       type: String,
-      default: 'var(--color-dark)',
+      default: 'var(--color-sidebar-text)',
     },
     activeTextColor: {
       type: String,
-      default: 'var(--color-primary)',
+      default: 'var(--color-sidebar-text-active)',
     },
   },
   data() {

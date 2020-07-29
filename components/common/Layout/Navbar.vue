@@ -2,7 +2,7 @@
   <el-header class="p-0 shadow">
     <!--  -->
     <el-menu
-      class="el-menu-demo"
+      class="navbar"
       mode="horizontal"
       :background-color="backgroundColor"
       :text-color="textColor"
@@ -17,7 +17,7 @@
         {{ $t('navbar.dashboard') }}
       </el-menu-item>
       <!-- Login button -->
-      <el-submenu style="float: right;" class="no-caret" index="3">
+      <el-submenu class="no-caret float-right navbar-submenu" index="3">
         <template slot="title">
           <el-avatar size="small" :src="avatar" class="bg-none"></el-avatar>
           <span class="ml-3">{{ username }}</span>
@@ -56,15 +56,15 @@ export default {
   props: {
     backgroundColor: {
       type: String,
-      default: 'var(--color-theme-1)',
+      default: 'var(--color-navbar-background)',
     },
     textColor: {
       type: String,
-      default: '#FFFFFF',
+      default: 'var(--color-navbar-text)',
     },
     activeTextColor: {
       type: String,
-      default: '#FFFFFF',
+      default: 'var(--color-navbar-text-active)',
     },
   },
   data() {

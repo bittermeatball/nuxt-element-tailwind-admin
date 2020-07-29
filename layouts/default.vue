@@ -4,7 +4,7 @@
       class="default-layout-aside"
       :width="sidebarCollapsed ? '65px' : '250px'"
     >
-      <Sidebar active-text-color="var(--color-success)">
+      <Sidebar>
         <template v-slot:header>
           <img
             src="~/assets/img/logo-md.png"
@@ -64,5 +64,6 @@ export default {
   background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
+  background-attachment: local;
 }
 </style>

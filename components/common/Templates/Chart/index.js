@@ -1,1 +1,1 @@
-export { default as LineChart } from './LineChart/Main.vue'
+export { default as LineChart } from './LineChart/MainLine.vue'
