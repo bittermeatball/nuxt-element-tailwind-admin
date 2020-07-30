@@ -27,24 +27,36 @@
         </el-menu-item>
       </el-submenu>
       <!-- i18n button -->
-      <el-menu-item
-        v-if="locale == 'en'"
-        size="sm"
-        class="bg-red float-right"
-        title="Đổi sang tiếng Việt"
-        @click="changeLanguage('vi')"
+      <el-tooltip
+        class="item"
+        effect="dark"
+        content="Đổi sang tiếng Việt"
+        placement="bottom-start"
       >
-        <i class="el-icon-star-on text-yellow m-0"></i>
-      </el-menu-item>
-      <el-menu-item
-        v-if="locale == 'vi'"
-        size="sm"
-        class="bg-blue float-right"
-        title="Switch to English"
-        @click="changeLanguage('en')"
+        <el-menu-item
+          v-if="locale == 'en'"
+          size="sm"
+          class="bg-red float-right"
+          @click="changeLanguage('vi')"
+        >
+          <i class="el-icon-star-on text-yellow m-0"></i>
+        </el-menu-item>
+      </el-tooltip>
+      <el-tooltip
+        class="item"
+        effect="dark"
+        content="Switch to English"
+        placement="bottom-start"
       >
-        <fa :icon="['fas', 'globe-americas']" class="mx-1" />
-      </el-menu-item>
+        <el-menu-item
+          v-if="locale == 'vi'"
+          size="sm"
+          class="bg-blue float-right"
+          @click="changeLanguage('en')"
+        >
+          <fa :icon="['fas', 'globe-americas']" class="mx-1" />
+        </el-menu-item>
+      </el-tooltip>
     </el-menu>
   </el-header>
 </template>

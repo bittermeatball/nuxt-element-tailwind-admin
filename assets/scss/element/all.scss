@@ -1,3 +1,4 @@
+@import './components/loading';
 @import './components/footer';
 @import './components/menu';
 @import './components/submenu';
@@ -9,4 +10,8 @@
     .el-submenu__icon-arrow {
         display: none !important;
     }
+}
+
+button:focus {
+    outline: none !important;
 }

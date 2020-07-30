@@ -21,7 +21,7 @@
       <!-- el-header -->
       <Navbar />
       <!-- el-main -->
-      <nuxt class="relative default-page-container" />
+      <nuxt class="relative default-page-container" keep-alive />
       <!-- el-dialog -->
       <Login />
       <!-- el-footer -->

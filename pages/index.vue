@@ -11,7 +11,7 @@
         />
       </el-col>
       <el-col :span="12" class="grid-content">
-        <DataTable
+        <StaticTable
           title="Best employees of the month"
           :headers="bestEmployeeData.headers"
           :data="bestEmployeeData.data"
@@ -23,7 +23,7 @@
 </template>
 <script>
 import { StatusRow } from '~/components/uncommon/Home'
-import { DataTable, LineChart } from '~/components/common'
+import { StaticTable, LineChart } from '~/components/common'
 //
 // Fake data for example
 const statusData = require('~/constants/base/examples/status-row.json')
@@ -32,7 +32,7 @@ export default {
   name: 'Home',
   components: {
     StatusRow,
-    DataTable,
+    StaticTable,
     LineChart,
   },
   data() {

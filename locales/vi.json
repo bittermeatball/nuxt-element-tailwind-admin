@@ -38,6 +38,14 @@
     "header": "Đây là một header",
     "sidebar": "Đây là một sidebar"
   },
+  "users": {
+    "title": "Quản lý người dùng",
+    "add-new": "Thêm mới",
+    "edit": "Sửa thông tin",
+    "delete": "Xóa",
+    "search": "Tìm kiếm người dùng",
+    "deleted": "Danh sách đã xóa"
+  },
   "components": {
     "card": {
       "status": {

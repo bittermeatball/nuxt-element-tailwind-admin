@@ -104,7 +104,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://5f09ce0c5e512a00161c1183.mockapi.io/api/v1'
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

@@ -38,6 +38,14 @@
     "header": "This is a header",
     "sidebar": "This is a sidebar"
   },
+  "users": {
+    "title": "User management",
+    "add-new": "Add new",
+    "edit": "Edit user",
+    "delete": "Delete user",
+    "search": "Search user",
+    "deleted": "Deleted users"
+  },
   "components": {
     "card": {
       "status": {

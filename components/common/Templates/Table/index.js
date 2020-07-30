@@ -1,1 +1,1 @@
-export { default as DataTable } from './DataTable.vue'
+export { default as StaticTable } from './StaticTable.vue'
