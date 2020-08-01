@@ -51,6 +51,14 @@
       "status": {
         "since-last-month": "Since last month"
       }
+    },
+    "table": {
+      "data": {
+        "title": "Data table",
+        "edit": "Edit",
+        "delete": "Delete",
+        "search": "Search"
+      }
     }
   },
   "secret-text": "This page requires authentication",

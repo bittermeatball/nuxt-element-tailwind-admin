@@ -51,6 +51,14 @@
       "status": {
         "since-last-month": "Từ tháng trước"
       }
+    },
+    "table": {
+      "data": {
+        "title": "Bảng dữ liệu",
+        "edit": "Chỉnh sửa",
+        "delete": "Xóa",
+        "search": "Tìm kiếm"
+      }
     }
   },
   "secret-text": "Trang này yêu cầu đăng nhập mới thấy được",
