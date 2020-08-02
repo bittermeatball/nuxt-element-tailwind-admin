@@ -55,9 +55,12 @@
     "table": {
       "data": {
         "title": "Bảng dữ liệu",
+        "list": "Danh sách người dùng",
         "edit": "Chỉnh sửa",
         "delete": "Xóa",
-        "search": "Tìm kiếm"
+        "search": "Tìm kiếm",
+        "restore": "Hồi phục",
+        "delete-pernamently": "Xóa vĩnh viễn"
       }
     }
   },

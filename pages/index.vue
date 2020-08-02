@@ -7,7 +7,7 @@
           title="Biểu đồ mẫu"
           :data="chartdata"
           :options="chartOptions"
-          class="dashboard-chart bg-theme-2 border-0 rounded-lg"
+          class="dashboard-chart border-0 rounded-lg"
         />
       </el-col>
       <el-col :span="12" class="grid-content">
@@ -52,27 +52,27 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
-        legend: {
-          labels: {
-            fontColor: 'white',
-          },
-        },
+        // legend: {
+        //   labels: {
+        //     fontColor: 'white',
+        //   },
+        // },
         scales: {
           yAxes: [
             {
               ticks: {
                 beginAtZero: true,
-                fontColor: 'white',
+                // fontColor: 'white',
               },
             },
           ],
-          xAxes: [
-            {
-              ticks: {
-                fontColor: 'white',
-              },
-            },
-          ],
+          // xAxes: [
+          //   {
+          //     ticks: {
+          //       fontColor: 'white',
+          //     },
+          //   },
+          // ],
         },
       },
     }
@@ -115,7 +115,7 @@ export default {
 .dashboard-chart {
   .el-card__header {
     border: none;
-    color: white;
+    color: var(--color-dark);
   }
 }
 </style>

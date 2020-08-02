@@ -41,6 +41,7 @@
   "users": {
     "title": "User management",
     "add-new": "Add new",
+    "list": "Users list",
     "edit": "Edit user",
     "delete": "Delete user",
     "search": "Search user",
@@ -57,7 +58,9 @@
         "title": "Data table",
         "edit": "Edit",
         "delete": "Delete",
-        "search": "Search"
+        "search": "Search",
+        "restore": "Restore",
+        "delete-pernamently": "Delete pernamently"
       }
     }
   },

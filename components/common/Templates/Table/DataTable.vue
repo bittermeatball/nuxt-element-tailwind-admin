@@ -57,38 +57,22 @@
     >
       <el-table-column type="selection" width="55" class="select-none" />
       <slot></slot>
-      <el-table-column width="100" align="right">
+      <el-table-column width="40" align="right">
         <template slot-scope="scope">
-          <el-tooltip
-            class="item"
-            effect="dark"
-            :content="$t('components.table.data.edit')"
-            placement="bottom-start"
-          >
-            <el-button
-              size="mini"
-              type="warning"
-              class="px-2 select-none"
-              @click="handleEdit(scope.$index, scope.row)"
-            >
-              <i class="el-icon-edit"></i>
-            </el-button>
-          </el-tooltip>
-          <el-tooltip
-            class="item"
-            effect="dark"
-            :content="$t('components.table.data.delete')"
-            placement="bottom-start"
-          >
-            <el-button
-              size="mini"
-              type="danger"
-              class="px-2 select-none"
-              @click="handleDelete(scope.$index, scope.row)"
-            >
-              <i class="el-icon-delete"></i>
-            </el-button>
-          </el-tooltip>
+          <el-dropdown trigger="click" @command="handleActionCommand">
+            <span class="el-dropdown-link">
+              <i class="el-icon-more-outline"></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item
+                v-for="action in actions"
+                :key="`${action.name}:${scope.$index}`"
+                :command="`${action.name}:${scope.$index}`"
+              >
+                {{ $t(action.label) }}
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
         </template>
       </el-table-column>
     </el-table>
@@ -123,10 +107,32 @@ export default {
         return this.$t('components.table.data.title')
       },
     },
+    extraQuery: {
+      type: Object,
+      default() {
+        return {}
+      },
+    },
+    actions: {
+      type: Array,
+      default() {
+        return [
+          {
+            name: 'edit',
+            label: 'components.table.data.edit',
+          },
+          {
+            name: 'delete',
+            label: 'components.table.data.delete',
+          },
+        ]
+      },
+    },
   },
   async fetch() {
     const response = await this.$axios.get(
-      `${this.endpoint}?` + queryString.stringify(this.query)
+      `${this.endpoint}?` +
+        queryString.stringify({ ...this.query, ...this.extraQuery })
     )
     this.tableData = response.data
   },
@@ -155,11 +161,9 @@ export default {
       this.$fetch()
       this.$emit('onSortChange', { prop, order })
     },
-    handleEdit(index, row) {
-      this.$emit('onEdit', { index, row })
-    },
-    handleDelete(index, row) {
-      this.$emit('onDelete', { index, row })
+    handleActionCommand(command) {
+      const actionHandler = command.split(':')
+      this.$emit('on-' + actionHandler[0], actionHandler[1])
     },
     onSizeChange(total) {
       this.$emit('onSizeChange', total)

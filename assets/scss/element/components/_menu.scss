@@ -1,5 +1,6 @@
 .el-menu--horizontal {
   .el-menu-item {
+    background-color: var(--color-navbar-item) !important;
     &:hover{
       background-color: var(--color-navbar-item-hover) !important;
       color: var(--color-navbar-item-hover-text) !important;
@@ -8,32 +9,36 @@
 }
 .navbar{
     .el-menu-item {
-        &:hover{
-            background-color: var(--color-navbar-item-hover) !important;
-            color: var(--color-navbar-item-hover-text) !important;
-        }
+      background-color: var(--color-navbar-item) !important;
+      &:hover{
+          background-color: var(--color-navbar-item-hover) !important;
+          color: var(--color-navbar-item-hover-text) !important;
+      }
     }
     .el-submenu__title {
-        &:hover{
-            background-color: var(--color-navbar-item-hover) !important;
-            color: var(--color-navbar-item-hover-text) !important;
-        }
+      &:hover{
+          background-color: var(--color-navbar-item-hover) !important;
+          color: var(--color-navbar-item-hover-text) !important;
+      }
     }
 }
 .sidebar-menu {
     .el-menu-item {
+      background-color: var(--color-sidebar-item) !important;
       &:hover {
           background-color: var(--color-sidebar-item-hover) !important;
           color: var(--color-sidebar-item-hover-text) !important;
       }
     }
     .el-submenu__title {
+      background-color: var(--color-sidebar-item) !important;
       &:hover {
           background-color: var(--color-sidebar-item-hover) !important;
           color: var(--color-sidebar-item-hover-text) !important;
       }
     }
     .header {
+      background-color: var(--color-sidebar-header-background) !important;
       &:hover {
         background-color: var(--color-sidebar-header-background) !important;
       }

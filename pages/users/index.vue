@@ -12,32 +12,36 @@
             <fa :icon="['fas', 'home']" />
           </nuxt-link>
         </div>
-        <el-tooltip
-          class="item"
-          effect="dark"
-          :content="$t('users.deleted')"
-          placement="bottom-start"
-        >
-          <el-button
-            class="float-right select-none"
-            type="danger"
-            size="mini"
-            icon="el-icon-delete"
-            circle
+        <nuxt-link to="/users/deleted">
+          <el-tooltip
+            class="item"
+            effect="dark"
+            :content="$t('users.deleted')"
+            placement="bottom-start"
           >
+            <el-button
+              class="float-right select-none"
+              type="danger"
+              size="mini"
+              icon="el-icon-delete"
+              circle
+            >
+            </el-button>
+          </el-tooltip>
+        </nuxt-link>
+        <nuxt-link to="/users/create">
+          <el-button
+            class="float-right mx-3 border-0 bg-theme-2-400 hover:bg-theme-2-500 text-white select-none"
+            size="mini"
+            round
+          >
+            {{ $t('users.add-new') }}
           </el-button>
-        </el-tooltip>
-        <el-button
-          class="float-right mx-3 border-0 bg-theme-2-400 hover:bg-theme-2-500 text-white select-none"
-          size="mini"
-          round
-        >
-          {{ $t('users.add-new') }}
-        </el-button>
+        </nuxt-link>
       </el-row>
     </el-container>
     <el-container class="p-3">
-      <DataTable endpoint="/users">
+      <DataTable endpoint="/users" :extra-query="extraQuery">
         <el-table-column type="expand">
           <template slot-scope="props">
             <p>Email: {{ props.row.email }}</p>
@@ -57,6 +61,11 @@ import { DataTable } from '~/components/common'
 export default {
   components: {
     DataTable,
+  },
+  data() {
+    return {
+      extraQuery: {},
+    }
   },
 }
 </script>
