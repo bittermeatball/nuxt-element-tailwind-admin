@@ -45,7 +45,17 @@
     "edit": "Edit user",
     "delete": "Delete user",
     "search": "Search user",
-    "deleted": "Deleted users"
+    "deleted": "Deleted users",
+    "create": {
+      "name": "User name",
+      "email": "User email",
+      "password": "User password",
+      "avatar": "User profile picture",
+      "role": "User role",
+      "address": "User address",
+      "note": "Note",
+      "submit": "Add user"
+    }
   },
   "components": {
     "card": {

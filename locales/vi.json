@@ -44,7 +44,18 @@
     "edit": "Sửa thông tin",
     "delete": "Xóa",
     "search": "Tìm kiếm người dùng",
-    "deleted": "Danh sách đã xóa"
+    "deleted": "Danh sách đã xóa",
+    "create": {
+      "title": "Thêm người dùng mới",
+      "name": "Họ và tên",
+      "email": "Địa chỉ email",
+      "password": "Mật khẩu",
+      "avatar": "Ảnh đại diện",
+      "role": "Vai trò",
+      "address": "Địa chỉ",
+      "note": "Ghi chú",
+      "submit": "Thêm mới"
+    }
   },
   "components": {
     "card": {

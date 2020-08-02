@@ -31,18 +31,90 @@
         </nuxt-link>
       </el-row>
     </el-container>
-    <el-container class="p-3">
+    <el-container class="p-3 mb-10">
       <el-row class="w-full">
         <el-col :span="16" class="mx-auto float-none">
           <el-card shadow="always" class="w-full">
-            <h2>{{ $t('users.create') }}</h2>
+            <h2 class="font-bold">
+              {{ $t('users.create.title') }}
+            </h2>
+            <hr class="my-5" />
             <FormWrapper @onSubmit="submitUser">
               <el-row :gutter="20">
-                <el-col :span="12">
-                  <InputWrapper></InputWrapper>
+                <el-col :span="7" class="text-center">
+                  <p class="text-center my-5 font-bold">
+                    {{ $t('users.create.avatar') }}
+                  </p>
+                  <InputWrapper>
+                    <FileUploader />
+                  </InputWrapper>
+                  <el-button native-type="submit" type="primary">
+                    {{ $t('users.create.submit') }}
+                  </el-button>
                 </el-col>
-                <el-col :span="12">
-                  <InputWrapper></InputWrapper>
+                <el-col :span="17">
+                  <InputWrapper
+                    rules="required"
+                    :label="$t('users.create.name')"
+                    label-for="users-input-name"
+                  >
+                    <el-input
+                      id="users-input-name"
+                      v-model="form.name"
+                    ></el-input>
+                  </InputWrapper>
+                  <InputWrapper
+                    rules="required|email"
+                    :label="$t('users.create.email')"
+                    label-for="users-input-email"
+                  >
+                    <el-input
+                      id="users-input-email"
+                      v-model="form.email"
+                    ></el-input>
+                  </InputWrapper>
+                  <InputWrapper
+                    rules="required"
+                    :label="$t('users.create.password')"
+                    label-for="users-input-password"
+                  >
+                    <el-input
+                      id="users-input-password"
+                      v-model="form.password"
+                      show-password
+                    ></el-input>
+                  </InputWrapper>
+                  <InputWrapper
+                    :label="$t('users.create.address')"
+                    label-for="users-input-address"
+                  >
+                    <el-input
+                      id="users-input-address"
+                      v-model="form.address"
+                    ></el-input>
+                  </InputWrapper>
+                  <InputWrapper
+                    rules="required"
+                    :label="$t('users.create.role')"
+                    label-for="users-input-role"
+                  >
+                    <el-select v-model="form.role">
+                      <el-option
+                        v-for="role in ['success', 'danger', 'pink']"
+                        :key="role"
+                        :label="role"
+                        :value="role"
+                      >
+                      </el-option>
+                    </el-select>
+                  </InputWrapper>
+                  <InputWrapper
+                    :label="$t('users.create.note')"
+                    label-for="users-input-note"
+                  >
+                    <el-input v-model="form.note" type="textarea" :rows="2">
+                    </el-input>
+                  </InputWrapper>
                 </el-col>
               </el-row>
             </FormWrapper>
@@ -53,14 +125,15 @@
   </el-main>
 </template>
 <script>
-import { FormWrapper, InputWrapper } from '~/components/common'
+import { FormWrapper, InputWrapper, FileUploader } from '~/components/common'
 export default {
-  components: { FormWrapper, InputWrapper },
+  components: { FormWrapper, InputWrapper, FileUploader },
   data() {
     return {
       form: {
         name: '',
         email: '',
+        password: '',
         avatar: '',
         address: '',
         role: '',
