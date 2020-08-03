@@ -1,6 +1,6 @@
 <template>
   <ValidationProvider v-slot="{ errors }" :rules="rules" class="relative">
-    <el-form-item :label="label" :for="labelFor">
+    <el-form-item :label="label" :for="labelFor" class="mb-0">
       <slot></slot>
     </el-form-item>
     <div class="text-danger mb-3">
