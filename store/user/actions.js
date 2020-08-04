@@ -7,6 +7,14 @@ export default {
     })
     return response
   },
+  async fetchMoreData({ rootState }) {
+    const response = await this.$axios.get('/users', {
+      // headers: {
+      //   Authorization: rootState.auth != null ? rootState.auth.token : '',
+      // },
+    })
+    return response
+  },
   async fetchSingle({ rootState }, id) {
     const response = await this.$axios.get('/users/' + id, {
       // headers: {

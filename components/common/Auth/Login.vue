@@ -24,6 +24,7 @@
 </template>
 <script>
 import { Dialog } from '~/components/common'
+import { root } from '~/constants/vuex/actions'
 export default {
   components: {
     Dialog,
@@ -43,7 +44,7 @@ export default {
   // Back to home if you've already been authenticated
   methods: {
     async postLogin() {
-      await this.$store.dispatch('login', this.form)
+      await this.$store.dispatch(root.LOGIN, this.form)
     },
   },
 }

@@ -63,6 +63,7 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex'
+import { root as rootAction } from '~/constants/vuex/actions'
 import { root } from '~/constants/vuex/mutations'
 export default {
   name: 'Navbar',
@@ -119,7 +120,7 @@ export default {
       console.log(key, keyPath)
     },
     logout() {
-      this.$store.dispatch('logout')
+      this.$store.dispatch(rootAction.LOGOUT)
       this.$router.push('/login')
     },
   },

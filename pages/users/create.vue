@@ -126,6 +126,7 @@
 </template>
 <script>
 import { FormWrapper, InputWrapper, FileUploader } from '~/components/common'
+import { user } from '~/constants/vuex/actions'
 export default {
   components: { FormWrapper, InputWrapper, FileUploader },
   data() {
@@ -145,7 +146,7 @@ export default {
     async submitUser() {
       try {
         const response = await this.$store.dispatch(
-          'user/submitSingle',
+          user.SUBMIT.SINGLE,
           this.form
         )
         this.$root.$emit('el:refresh:table', 'users-data-table')

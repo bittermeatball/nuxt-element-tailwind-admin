@@ -8,7 +8,8 @@ export default {
   TOGGLE: {
     SIDEBAR_COLLAPSE: 'TOGGLE_SIDEBAR_COLLAPSE',
   },
+  ADD: {},
+  REMOVE: {},
   INC: {},
   SUB: {},
-  PUSH: {},
 }

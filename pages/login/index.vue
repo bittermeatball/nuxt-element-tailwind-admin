@@ -44,6 +44,7 @@
 
 <script>
 import { FormWrapper, InputWrapper } from '~/components/common'
+import { root } from '~/constants/vuex/actions'
 export default {
   layout: 'unauth',
   // Back to home if you've already been authenticated
@@ -61,7 +62,7 @@ export default {
   },
   methods: {
     async postLogin() {
-      await this.$store.dispatch('login', this.form)
+      await this.$store.dispatch(root.LOGIN, this.form)
       this.$router.push('/')
     },
   },

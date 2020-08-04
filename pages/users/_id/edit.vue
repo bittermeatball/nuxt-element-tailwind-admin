@@ -126,11 +126,12 @@
 </template>
 <script>
 import { FormWrapper, InputWrapper, FileUploader } from '~/components/common'
+import { user } from '~/constants/vuex/actions'
 export default {
   components: { FormWrapper, InputWrapper, FileUploader },
   async fetch() {
     const response = await this.$store.dispatch(
-      'user/fetchSingle',
+      user.FETCH.SINGLE,
       this.$route.params.id
     )
     this.form = { ...this.form, ...response.data }
@@ -151,7 +152,7 @@ export default {
   methods: {
     async submitUpdate() {
       try {
-        const response = await this.$store.dispatch('user/updateSingle', {
+        const response = await this.$store.dispatch(user.UPDATE.SINGLE, {
           id: this.$route.params.id,
           form: this.form,
         })
