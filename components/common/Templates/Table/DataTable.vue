@@ -1,5 +1,5 @@
 <template>
-  <el-card shadow="always" class="border-0 rounded-lg w-full">
+  <el-card :id="id" shadow="always" class="border-0 rounded-lg w-full">
     <div class="mb-5">
       <h3 class="font-bold text-gray-600 inline-block">
         {{ title }}
@@ -128,6 +128,10 @@ export default {
         ]
       },
     },
+    id: {
+      type: String,
+      required: true,
+    },
   },
   async fetch() {
     const response = await this.$axios.get(
@@ -150,6 +154,13 @@ export default {
       },
     }
   },
+  created() {
+    this.$root.$on('el:refresh:table', (id) => {
+      if (id === this.id) {
+        this.$fetch()
+      }
+    })
+  },
   methods: {
     handleSelectionChange(val) {
       this.multipleSelection = val
@@ -163,7 +174,10 @@ export default {
     },
     handleActionCommand(command) {
       const actionHandler = command.split(':')
-      this.$emit('on-' + actionHandler[0], actionHandler[1])
+      this.$emit('on-' + actionHandler[0], {
+        rowID: actionHandler[1],
+        rowData: this.tableData[actionHandler[1]],
+      })
     },
     onSizeChange(total) {
       this.$emit('onSizeChange', total)

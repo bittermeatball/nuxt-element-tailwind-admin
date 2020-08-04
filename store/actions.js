@@ -1,3 +1,4 @@
+import { root } from '~/constants/vuex/mutations'
 // const queryString = require('query-string')
 export default {
   // Called manually in middleware in SPA mode
@@ -5,8 +6,8 @@ export default {
     let auth = null
     const authString = await localStorage.getItem('auth')
     auth = await JSON.parse(authString)
-    commit('SET_AUTH', auth)
-    commit('SET_SERVER_STATE', true) // Server is ready
+    commit(root.SET.AUTH, auth)
+    commit(root.SET.SERVER_STATE, true) // Server is ready
   },
   async login({ commit }, form) {
     console.log(form)
@@ -24,10 +25,10 @@ export default {
       // This use a constain as an example
     }, 1000)
     localStorage.setItem('auth', JSON.stringify(auth))
-    commit('SET_AUTH', auth) // Mutating to store for client rendering
+    commit(root.SET.AUTH, auth) // Mutating to store for client rendering
   },
   logout({ commit }) {
     localStorage.removeItem('auth')
-    commit('SET_AUTH', null)
+    commit(root.SET.AUTH, null)
   },
 }

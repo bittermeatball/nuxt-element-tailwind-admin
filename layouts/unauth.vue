@@ -38,6 +38,7 @@
 <script>
 import { mapMutations } from 'vuex'
 import { Footer } from '~/components/common'
+import { root } from '~/constants/vuex/mutations'
 export default {
   middleware: 'authNotRequired',
   components: {
@@ -50,7 +51,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      SET_LANG: 'SET_LANG',
+      SET_LANG: root.SET.LANG,
     }),
   },
 }

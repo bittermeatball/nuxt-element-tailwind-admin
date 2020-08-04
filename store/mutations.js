@@ -1,19 +1,20 @@
+import { root } from '~/constants/vuex/mutations'
 export default {
   // Communicate with Devtools
-  SET_LANG(state, locale) {
+  [root.SET.LANG](state, locale) {
     if (state.locales.includes(locale)) {
       state.locale = locale
       localStorage.setItem('locale', locale)
     }
   },
-  SET_SERVER_STATE(state, serverReady) {
+  [root.SET.SERVER_STATE](state, serverReady) {
     state.serverReady = serverReady
   },
-  SET_AUTH(state, auth) {
+  [root.SET.AUTH](state, auth) {
     state.auth = auth
   },
   // Options
-  TOGGLE_SIDEBAR_COLLAPSE(state) {
+  [root.TOGGLE.SIDEBAR_COLLAPSE](state) {
     state.options.sidebarCollapsed = !state.options.sidebarCollapsed
   },
 }

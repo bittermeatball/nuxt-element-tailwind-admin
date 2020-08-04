@@ -32,6 +32,7 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex'
+import { root } from '~/constants/vuex/mutations'
 import { Login, Navbar, Sidebar, Footer } from '~/components/common'
 export default {
   middleware: ['authRequired'],
@@ -53,7 +54,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      SET_LANG: 'SET_LANG',
+      SET_LANG: root.SET.LANG,
     }),
   },
 }

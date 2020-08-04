@@ -142,7 +142,19 @@ export default {
     }
   },
   methods: {
-    submitUser() {},
+    async submitUser() {
+      try {
+        const response = await this.$store.dispatch(
+          'user/submitSingle',
+          this.form
+        )
+        this.$root.$emit('el:refresh:table', 'users-data-table')
+        this.$router.push('/users')
+        this.$message(response.statusText)
+      } catch (err) {
+        this.$message(err)
+      }
+    },
   },
 }
 </script>

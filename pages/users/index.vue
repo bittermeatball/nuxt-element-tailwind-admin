@@ -41,7 +41,13 @@
       </el-row>
     </el-container>
     <el-container class="p-3">
-      <DataTable endpoint="/users" :extra-query="extraQuery">
+      <!-- Start data table -->
+      <DataTable
+        id="users-data-table"
+        endpoint="/users"
+        :extra-query="extraQuery"
+        @on-edit="onEdit"
+      >
         <el-table-column type="expand">
           <template slot-scope="props">
             <p>Email: {{ props.row.email }}</p>
@@ -66,6 +72,11 @@ export default {
     return {
       extraQuery: {},
     }
+  },
+  methods: {
+    onEdit(payload) {
+      this.$router.push(`/users/${payload.rowData.id}/edit`)
+    },
   },
 }
 </script>

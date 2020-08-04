@@ -47,6 +47,7 @@
     "search": "Search user",
     "deleted": "Deleted users",
     "create": {
+      "title": "Add new user",
       "name": "User name",
       "email": "User email",
       "password": "User password",

@@ -63,6 +63,7 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex'
+import { root } from '~/constants/vuex/mutations'
 export default {
   name: 'Navbar',
   props: {
@@ -107,8 +108,8 @@ export default {
   },
   methods: {
     ...mapMutations({
-      SET_LANG: 'SET_LANG',
-      TOGGLE_SIDEBAR_COLLAPSE: 'TOGGLE_SIDEBAR_COLLAPSE',
+      SET_LANG: root.SET.LANG,
+      TOGGLE_SIDEBAR_COLLAPSE: root.TOGGLE.SIDEBAR_COLLAPSE,
     }),
     changeLanguage(locale) {
       this.SET_LANG(locale) // store in state and localStorage
