@@ -23,7 +23,7 @@ export default {
     })
     return response
   },
-  async submitSingle({ rootState }, form) {
+  async submitSingle({ rootState, commit }, form) {
     const response = await this.$axios.post('/users', form, {
       // headers: {
       //   Authorization: rootState.auth != null ? rootState.auth.token : '',
